@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Agency Demo | Automation Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <nav class="sidebar">
+      <div class="logo-area">
+        <div class="logo-icon"><i class="fa-solid fa-robot"></i></div>
+        <span class="logo-text">AIAgency</span>
+      </div>
+
+      <ul class="nav-links">
+        <li class="active"><a href="index.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+        <li><a href="bookings.html"><i class="fa-solid fa-calendar-check"></i> Demo Flow</a></li>
+        <li><a href="workflow.html"><i class="fa-solid fa-rocket"></i> Launch Workflow</a></li>
+      </ul>
+
+      <div class="pro-card">
+        <p>Turn this into your client pitch demo.</p>
+        <button class="upgrade-btn" onclick="location.href='bookings.html'">Open Demo</button>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="search-wrap">
+          <i class="fa-solid fa-search"></i>
+          <input type="text" placeholder="Search metrics..." />
+        </div>
+        <div class="user-info">
+          <button class="icon-btn"><i class="fa-regular fa-bell"></i><span class="badge">3</span></button>
+          <div class="avatar">
+            <img src="https://i.pravatar.cc/150?img=11" alt="User profile" />
+          </div>
+        </div>
+      </header>
+
+      <div class="content-wrapper">
+        <div class="page-header">
+          <div>
+            <h1>Local Business Automation Dashboard</h1>
+            <p class="subtitle">A GitHub-ready front-end demo you can show to restaurants, clinics, and service businesses.</p>
+          </div>
+          <div class="date-picker"><i class="fa-solid fa-display"></i> Demo Mode</div>
+        </div>
+
+        <div class="metrics-grid">
+          <div class="metric-card glass-card">
+            <div class="metric-icon blue"><i class="fa-regular fa-clock"></i></div>
+            <div class="metric-info">
+              <span class="label">Hours Saved</span>
+              <span class="value" id="hoursSaved">142<span class="unit">h</span></span>
+            </div>
+            <div class="metric-trend positive"><i class="fa-solid fa-arrow-up"></i> Faster response times</div>
+          </div>
+          <div class="metric-card glass-card">
+            <div class="metric-icon purple"><i class="fa-solid fa-calendar-plus"></i></div>
+            <div class="metric-info">
+              <span class="label">Auto-Bookings</span>
+              <span class="value" id="autoBookings">284</span>
+            </div>
+            <div class="metric-trend positive"><i class="fa-solid fa-arrow-up"></i> More conversions</div>
+          </div>
+          <div class="metric-card glass-card">
+            <div class="metric-icon green"><i class="fa-solid fa-sack-dollar"></i></div>
+            <div class="metric-info">
+              <span class="label">Extra Revenue</span>
+              <span class="value" id="extraRevenue">$8.4<span class="unit">k</span></span>
+            </div>
+            <div class="metric-trend positive"><i class="fa-solid fa-arrow-up"></i> Estimated lift</div>
+          </div>
+          <div class="metric-card glass-card">
+            <div class="metric-icon orange"><i class="fa-solid fa-comments"></i></div>
+            <div class="metric-info">
+              <span class="label">AI Chats Handled</span>
+              <span class="value" id="aiChatsHandled">1,029</span>
+            </div>
+            <div class="metric-trend neutral"><i class="fa-solid fa-minus"></i> Live demo data</div>
+          </div>
+        </div>
+
+        <div class="charts-grid">
+          <div class="chart-container glass-card">
+            <div class="chart-header">
+              <h2>Automated Actions Over Time</h2>
+              <button class="options-btn"><i class="fa-solid fa-ellipsis"></i></button>
+            </div>
+            <div class="canvas-wrap">
+              <canvas id="mainChart"></canvas>
+            </div>
+          </div>
+
+          <div class="chart-container glass-card">
+            <div class="chart-header">
+              <h2>Automation Mix</h2>
+              <button class="options-btn"><i class="fa-solid fa-ellipsis"></i></button>
+            </div>
+            <div class="canvas-wrap donut-wrap">
+              <canvas id="donutChart"></canvas>
+            </div>
+            <div class="legend-custom" id="donutLegend"></div>
+          </div>
+        </div>
+
+        <div class="table-container glass-card">
+          <div class="chart-header">
+            <h2>Recent Automation Log</h2>
+            <a href="bookings.html" class="view-all">Run Demo</a>
+          </div>
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Trigger</th>
+                  <th>Customer</th>
+                  <th>Action Taken</th>
+                  <th>Status</th>
+                  <th>Time</th>
+                </tr>
+              </thead>
+              <tbody id="automationLogBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launch Workflow | AI Agency Dashboard</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo-area">
+                <div class="logo-icon"><i class="fa-solid fa-robot"></i></div>
+                <span class="logo-text">AIAgency</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+                <li class="active"><a href="workflow.html"><i class="fa-solid fa-rocket"></i> Launch Workflow</a></li>
+                <li><a href="#"><i class="fa-solid fa-calendar-check"></i> Bookings Flow</a></li>
+                <li><a href="#"><i class="fa-solid fa-users"></i> CRM Pipeline</a></li>
+                <li><a href="#"><i class="fa-solid fa-message"></i> AI Chat Logs</a></li>
+                <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+            </ul>
+
+            <div class="pro-card">
+                <p>Ready to automate?</p>
+                <button class="upgrade-btn">Start Trial</button>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="topbar">
+                <div class="search-wrap">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" placeholder="Search tasks...">
+                </div>
+                <div class="user-info">
+                    <button class="icon-btn"><i class="fa-regular fa-bell"></i><span class="badge">3</span></button>
+                    <div class="avatar">
+                        <img src="https://i.pravatar.cc/150?img=11" alt="User Profile">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content: Kanban Board -->
+            <div class="content-wrapper">
+                <div class="page-header">
+                    <div>
+                        <h1>Agency Launch Plan</h1>
+                        <p class="subtitle">Step-by-step roadmap to scale your AI Automation Agency.</p>
+                    </div>
+                    <div class="date-picker"><i class="fa-solid fa-plus"></i> New Task</div>
+                </div>
+
+                <div class="kanban-board">
+                    <!-- Column 1: Backlog / To Do -->
+                    <div class="kanban-column glass-card" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <div class="kanban-header">
+                            <h3>To Do <span class="task-count">6</span></h3>
+                            <button class="options-btn"><i class="fa-solid fa-ellipsis"></i></button>
+                        </div>
+                        <div class="kanban-cards">
+                            <!-- Phase 1 -->
+                            <div class="kanban-card" draggable="true" ondragstart="drag(event)" id="task1">
+                                <div class="task-tags">
+                                    <span class="tag tag-blue">Week 1-2</span>
+                                    <span class="tag tag-purple">Foundation</span>
+                                </div>
+                                <h4>Learn core tools</h4>
+                                <p>Master Zapier/Make, ChatGPT, and HubSpot CRM basics.</p>
+                                <div class="task-meta">
+                                    <img src="https://i.pravatar.cc/150?img=11" alt="Assignee" class="assignee-avatar">
+                                    <span><i class="fa-regular fa-clock"></i> Est. 2 weeks</span>
+                                </div>
+                            </div>
+
+                            <div class="kanban-card" draggable="true" ondragstart="drag(event)" id="task2">
+                                <div class="task-tags">
+                                    <span class="tag tag-blue">Week 1-2</span>
+                                    <span class="tag tag-purple">Foundation</span>
+                                </div>
+                                <h4>Build 1-2 demo projects</h4>
+                                <p>Create a sample chatbot and automation workflow to show clients.</p>
+                                <div class="task-meta">
+                                    <img src="https://i.pravatar.cc/150?img=11" alt="Assignee" class="assignee-avatar">
+                                    <span><i class="fa-solid fa-list-check"></i> 0/2</span>
+                                </div>
+                            </div>
+
+                            <!-- Phase 2 -->
+                            <div class="kanban-card" draggable="true" ondragstart="drag(event)" id="task3">
+                                <div class="task-tags">
+                                    <span class="tag tag-orange">Week 3</span>
+                                    <span class="tag tag-green">Outreach</span>
+                                </div>
+                                <h4>Start outreach campaigns</h4>
+                                <p>Walk into local businesses, DM on IG, reach out on LinkedIn.</p>
+                                <div class="task-meta">
+                                    <img src="https://i.pravatar.cc/150?img=11" alt="Assignee" class="assignee-avatar">
+                                    <span><i class="fa-regular fa-comment"></i> Pitch ready</span>
+                                </div>
+                            </div>
+
+                            <div class="kanban-card" draggable="true" ondragstart="drag(event)" id="task4">
+                                <div class="task-tags">
+                                    <span class="tag tag-orange">Week 3</span>
+                                    <span class="tag tag-green">Outreach</span>
+                                </div>
+                                <h4>Talk to 10-20 businesses</h4>
+                                <p>Set up meetings to demonstrate built automation examples.</p>
+                                <div class="task-meta">
+                                    <img src="https://i.pravatar.cc/150?img=11" alt="Assignee" class="assignee-avatar">
+                                    <span><i class="fa-solid fa-users"></i> 0/20</span>
+                                </div>
+                            </div>
+
+                            <!-- Phase 4 (Phase 3 is in progress/done usually, let's keep all here initially) -->
+                            <div class="kanban-card" draggable="true" ondragstart="drag(event)" id="task6">
+                                <div class="task-tags">
+                                    <span class="tag tag-red">Month 2-3</span>
+                                    <span class="tag tag-yellow">Scaling</span>
+                                </div>
+                                <h4>Scale to 3-5 clients</h4>
+                                <p>Focus on niches (e.g., medical offices or restaurants) and template delivery.</p>
+                                <div class="task-meta">
+                                    <img src="https://i.pravatar.cc/150?img=11" alt="Assignee" class="assignee-avatar">
+                                    <span><i class="fa-solid fa-chart-line"></i> MRR Goal</span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Column 2: In Progress -->
+                    <div class="kanban-column glass-card" id="inprogress" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <div class="kanban-header">
+                            <h3>In Progress <span class="task-count">1</span></h3>
+                            <button class="options-btn"><i class="fa-solid fa-ellipsis"></i></button>
+                        </div>
+                        <div class="kanban-cards">
+                            <!-- Phase 3 -->
+                            <div class="kanban-card" draggable="true" ondragstart="drag(event)" id="task5">
+                                <div class="task-tags">
+                                    <span class="tag tag-yellow">Month 1</span>
+                                    <span class="tag tag-green">Deals</span>
+                                </div>
+                                <h4>Close first client</h4>
+                                <p>Secure a One-time setup fee + Monthly retainer.</p>
+                                <div class="task-meta">
+                                    <img src="https://i.pravatar.cc/150?img=11" alt="Assignee" class="assignee-avatar">
+                                    <span><i class="fa-solid fa-handshake"></i> Active Negotiation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 3: Done -->
+                    <div class="kanban-column glass-card" id="done" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <div class="kanban-header">
+                            <h3>Done <span class="task-count">0</span></h3>
+                            <button class="options-btn"><i class="fa-solid fa-ellipsis"></i></button>
+                        </div>
+                        <div class="kanban-cards">
+                            <!-- Empty state or just dropzone -->
+                            <div class="empty-state">Drop tasks here when completed</div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="kanban.js"></script>
+</body>
+</html>
